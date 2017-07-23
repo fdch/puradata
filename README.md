@@ -55,7 +55,7 @@ Note that this only translates the 'comments' inside patches, i.e., 'text X Y' o
 * Some realignment might be needed afterwards.
 * The translation character set is bound to pd's comments character set.
 
-In other words: **use at your own risk**, and check every patch just in case. 
+In other words: **use at your own risk**, keep a backup of original patches, and check every translated patch just in case. 
 
 # PDDIR:
 
