@@ -39,4 +39,4 @@ This will insert your translation into the current version of pd.
 
 # ERRATA:
 
-Note that this only translates the 'comments' inside patches, i.e., 'text X Y' objects. This means that some patch cords might break afterwards depending on the case. Also, some realignment might be needed afterwards, so you need to check every patch just in case.
+Note that this only translates the 'comments' inside patches, i.e., 'text X Y' objects. This means that some patch cords might break afterwards depending on the case. Also, some realignment might be needed afterwards, so you need to check every patch just in case. Use at your own risk.
