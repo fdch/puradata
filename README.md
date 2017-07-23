@@ -24,7 +24,7 @@ For example:
 
 ``$ ./template doc/5.reference "Fede Camara Halac" camarafede@gmail.com Spanish es``
 
-Or "extra/sigmund~", "extra/bob~", "doc/2. etc..
+Or "extra/sigmund~", "extra/bob~", "doc/3.audio.examples", etc..
 
 If you did things right, you get the following files:
 
