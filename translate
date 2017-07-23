@@ -1,15 +1,32 @@
 #!/bin/bash
-PDDIR="/Aplications/Pd-0.48.0/Contents/Resources"
-DOCDIR="$PDDIR/doc"
-FILEDIR="$1"
+#
+#  This file assumes you have already translated whatever you feed as "$1".po
+#
+PDDIR="/Applications/Pd-0.48.0.app/Contents/Resources"
+if [ $1 ]
+then
+  FILEDIR="$1"
+  BASEFILE=$(basename "$FILEDIR")
+else echo "
+No arguments detected.
+Please specify File-Directory
+"
+exit
+fi
 CURDIR="$(pwd)"
-ID=$(grep msgid "$FILEDIR-trim.po" | sed "s/^msgid \"//" | sed "s/.$//")
-INDEX=$(grep msgid "$FILEDIR-index.po" | sed "s/^msgid \"//" | sed "s/.$//")
-STR=$(grep msgstr "$FILEDIR-trim-complete.po" | sed "s/^msgstr \"//" | sed "s/.$//")
-cd $DOCDIR/$FILEDIR
+INDEX=$(grep msgid "$BASEFILE.index" | sed "s/^msgid \"//" | sed "s/.$//")
+ID=$(grep msgid "$BASEFILE.po" | sed "s/^msgid \"//" | sed "s/.$//")
+STR=$(grep msgstr "$BASEFILE.po" | sed "s/^msgstr \"//" | sed "s/.$//")
+cd $PDDIR/$FILEDIR
+#  Re index the files into fields, then search and replace
 paste <(echo "$INDEX") <(echo "$ID") <(echo "$STR") | while IFS="$(printf '\t')" read -r f1 f2 f3
 do
+  #  Default search/replace:
   sed -i '' "s|$f1 $f2|$f1 $f3|g" *.pd
+  #  Alternate search/replace:
   #perl  -0777 -i -pe "s|$f1 $f2|$f1 $f3|g" *.pd 
+  #  Debugging:
+  #echo "$f1 $f2" ; echo "$f1 $f3"
 done
 cd $CURDIR
+exit
