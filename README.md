@@ -5,8 +5,8 @@ This is a set of helper scripts to translate Pd's internal documentation (docs, 
 # Steps
 
 1. Create a template out of all patches inside specified File-Directory
-2. Translate using your prefered tool (Google toolkit, OmegaT, etc)
-3. Integrate the translated back to Pd.
+2. Human Translate using your prefered tool (Google toolkit, OmegaT, etc)
+3. Translate the patches back to Pd.
 
 # 1 : Create a Template
 
@@ -22,16 +22,14 @@ Run  `$ ./template` specifying **all** the following arguments:
 
 For example:
 
-`$ ./template docs/5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es`
+`$ ./template doc/5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es`
 
-Or
-
-`$ ./template extra/sigmund~ \"Fede Camara Halac\" camarafede@gmail.com Spanish es`
+Or "extra/sigmund~", "extra/bob~", "doc/2. etc..
 
 If you did things right, you get the following files:
 
-* "File".po
-* "File".index
+* "5.reference".po
+* "5.reference".index
 
 # 2 : Human Translate
 

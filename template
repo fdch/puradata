@@ -1,7 +1,7 @@
 #!/bin/bash
 PDDIR="/Applications/Pd-0.48.0.app/Contents/Resources"
 
-FILEDIRS=$(basename $(for i in $PDDIR/* ; do echo $i ; done))
+FILEDIRS=$(basename $(for i in $PDDIR/doc/* ; do echo $i ; done))
 if [ $1 ]
 then
   FILEDIR="$1"
@@ -18,8 +18,8 @@ Please, specify all the following arguments:
 For example:
 ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
 
-(***) Here is a list of all found File-Directories inside
-$PDDIR:
+(***) Here is an example list of all found File-Directories inside
+$PDDIR/doc:
 
 $FILEDIRS"
 exit
