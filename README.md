@@ -33,7 +33,7 @@ If you did things right, you get the following files:
 
 # 2 : Human Translate
 
-This is where Google Toolkit (or OmegaT, or whatever) and expertise comes in handy. Load the generated "File".po into the translating software. Once you are done, save it in the same "File".po (i.e., overwrite the file). 
+This is where Google Toolkit (or OmegaT, or whatever) and expertise comes in handy. Load the generated "File".po into the translating software. Translate. Once you are done, save it in the same "File".po (i.e., overwrite the file). 
 
 NOTE: The "File".index is only meant for internal use and should not be touched.
 
