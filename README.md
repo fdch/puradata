@@ -11,9 +11,9 @@ This is a set of helper scripts to translate Pd's internal documentation (docs) 
 # 1 : Template
 
 Run 
-
-`  $ ./template
-
+`
+  $ ./template
+`
 Specifying all the following arguments:
 
 1 : File-Directory (***)
