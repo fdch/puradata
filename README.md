@@ -14,14 +14,15 @@ Run
 `$ ./template`
 Specifying all the following arguments:
 
-1 : File-Directory (***)
-2 : Author Name (e.g. \"Name Lastname\") 
-3 : Author email
-4 : Target language
-5 : Target language id (e.g. de, es, fr...)
+1. File-Directory (***)
+2. Author Name (e.g. \"Name Lastname\") 
+3. Author email
+4. Target language
+5. Target language id (e.g. de, es, fr...)
 
 For example:
 `$ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es`
+
 (***) There is a list of all found File-Directories inside pd/docs
 
 If you did things right, you get a bunch of files created and a 'successful' message
