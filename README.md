@@ -22,7 +22,7 @@ Run  `$ ./template` specifying **all** the following arguments:
 
 For example:
 
-`$ ./template doc/5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es`
+``$ ./template doc/5.reference "Fede Camara Halac" camarafede@gmail.com Spanish es``
 
 Or "extra/sigmund~", "extra/bob~", "doc/2. etc..
 
