@@ -52,7 +52,7 @@ echo "# Spanish translations for Pure Data $BASEFILE.
 #
 msgid \"\"
 msgstr \"Project-Id-Version: Pure Data 0.48.0\n\"
-\"Report-Msgid-Bugs-To: pd-dev@iem.at\n\"
+\"Report-Bugs-To: camarafede@gmail.com\n\"
 \"PO-Revision-Date: $DATE\n\"
 \"Last-Translator: $AUTHOR <$EMAIL>\n\"
 \"Language-Team: $LANG\n\"
