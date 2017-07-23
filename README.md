@@ -25,7 +25,7 @@ For example:
 
 (***) There is a list of all found File-Directories inside pd/docs
 
-If you did things right, you get a bunch of files created and a 'successful' message
+If you did things right, you get a bunch of .po files created and a 'successful' message
 
 # 2 : Human Translate
 
