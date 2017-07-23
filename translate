@@ -1,0 +1,14 @@
+#!/bin/bash
+DOCDIR="/Aplications/Pd-0.48.0/Contents/Resources"
+FILEDIR="$1"
+CURDIR="$(pwd)"
+ID=$(grep msgid "$FILEDIR-trim.po" | sed "s/^msgid \"//" | sed "s/.$//")
+INDEX=$(grep msgid "$FILEDIR-index.po" | sed "s/^msgid \"//" | sed "s/.$//")
+STR=$(grep msgstr "$FILEDIR-trim-complete.po" | sed "s/^msgstr \"//" | sed "s/.$//")
+cd $DOCDIR/$FILEDIR
+paste <(echo "$INDEX") <(echo "$ID") <(echo "$STR") | while IFS="$(printf '\t')" read -r f1 f2 f3
+do
+  sed -i '' "s|$f1 $f2|$f1 $f3|g" *.pd
+  #perl  -0777 -i -pe "s|$f1 $f2|$f1 $f3|g" *.pd 
+done
+cd $CURDIR

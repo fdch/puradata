@@ -1,0 +1,84 @@
+#!/bin/bash
+PDDIR="/Aplications/Pd-0.48.0/Contents/Resources"
+DOCDIR="$PDDIR/doc"
+FILEDIRS=$(basename $(for i in $DOCDIR/* ; do echo $i ; done))
+if [ $1 ]
+then
+  FILEDIR="$1"
+else echo "
+No arguments detected.
+Please, specify all the following arguments:
+1 : File-Directory (***)
+2 : Author Name (e.g. \"Name Lastname\") 
+3 : Author email
+4 : Target language
+5 : Target language id (e.g. de, es, fr...)
+
+For example:
+./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
+
+(***) Here is a list of all found File-Directories inside
+$DOCDIR:
+
+$FILEDIRS"
+exit
+fi
+echo "
+Searchin for all files in folder:
+$DOCDIR/$FILEDIR
+"
+if [[ $2 ]] ; then AUTHOR="$2" ; echo "Author: $AUTHOR"
+else echo "Specify author \"name lastname\" in arg 2" ; exit ; fi
+if [[ $3 ]] ; then EMAIL="$3"; echo "Email: $EMAIL"
+else echo "Specify author email in arg 3" ; exit ; fi
+if [[ $4 ]] ; then LANG="$4"; echo "Target Language: $LANG"
+else echo "Specify target language in arg 4" ; exit ; fi
+if [[ $5 ]] ; then LANGID="$5"; echo "Language id: $LANGID"
+else echo "Specify the language 2 charachter id in arg 5" ; exit; fi
+CHARSET="UTF-8"
+DATE=date
+CURDIR="$(pwd)"
+cd $DOCDIR/$FILEDIR
+SOURCE=$(grep 'text' * | cut -f 2-10000 -d ' ')
+SOURCE=$(echo "$SOURCE" | sed -n "/^text /p")
+cd $CURDIR
+echo "# Spanish translations for Pure Data package.
+# This file is put in the public domain.
+# $AUTHOR <$EMAIL>, 2017.
+#
+msgid \"\"
+msgstr \"Project-Id-Version: Pure Data 0.48.0\n\"
+\"Report-Msgid-Bugs-To: pd-dev@iem.at\n\"
+\"PO-Revision-Date: $DATE\n\"
+\"Last-Translator: $AUTHOR <$EMAIL>\n\"
+\"Language-Team: $LANG\n\"
+\"Language: $LANGID\n\"
+\"MIME-Version: 1.0\n\"
+\"Content-Type: text/plain; charset=$CHARSET\n\"
+\"Content-Transfer-Encoding: 8bit\n\"
+\"Plural-Forms: nplurals=2; plural=(n != 1);\n\"
+" > "$FILEDIR".po
+echo "" > "$FILEDIR"-trim.po
+echo "" > "$FILEDIR"-index.po
+echo "$SOURCE" | while read line
+do
+LTRIM=$(echo "$line" | cut -f 4-10000 -d ' ')
+INDEX=$(echo "$line" | cut -f 1-3 -d ' ')
+echo "
+msgid \"$line\"
+msgstr \"\"
+" >> "$FILEDIR".po
+echo "
+msgid \"$LTRIM\"
+msgstr \"\"
+" >> "$FILEDIR"-trim.po
+echo "
+msgid \"$INDEX\"
+msgstr \"\"
+" >> "$FILEDIR"-index.po
+done
+echo "
+Source file succesfully generated in:
+$CURDIR/$FILEDIR.po
+"
+exit
