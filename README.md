@@ -47,6 +47,10 @@ NOTE: if pd is inside the Applications directory, this might require running:
 
 `$ sudo ./translate "5.reference"`
 
+# PDDIR:
+
+To change where pd is, go inside both template and translate and change the PDDIR variable to your installation.
+
 # ERRATA:
 
 Note that this only translates the 'comments' inside patches, i.e., 'text X Y' objects. This means that:
@@ -56,7 +60,3 @@ Note that this only translates the 'comments' inside patches, i.e., 'text X Y' o
 * The translation character set is bound to pd's comments character set.
 
 In other words: **use at your own risk**, keep a backup of original patches, and check every translated patch just in case. 
-
-# PDDIR:
-
-To change where pd is, go inside both template and translate and change the PDDIR variable to your installation.
