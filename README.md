@@ -11,9 +11,9 @@ This is a set of helper scripts to translate Pd's internal documentation (docs) 
 # 1 : Template
 
 Run 
-
-`  $ ./template
-
+`
+  $ ./template
+`
 Specifying all the following arguments:
 
 1 : File-Directory (***)
@@ -23,9 +23,9 @@ Specifying all the following arguments:
 5 : Target language id (e.g. de, es, fr...)
 
 For example:
-
+`
 $ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
-
+`
 (***) There is a list of all found File-Directories inside pd/docs
 
 If you did things right, you get a bunch of files created and a 'successful' message
@@ -37,9 +37,9 @@ This is where Google Toolkit (or OmegaT, or whatever) and expertise comes in han
 # 3 : Translate
 
 Run 
-
-`  $ ./translate "5.reference"
-
+`
+  $ ./translate "5.reference"
+`
 This will insert your translation into the current version of pd.
 
 
