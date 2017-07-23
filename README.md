@@ -49,7 +49,13 @@ NOTE: if pd is inside the Applications directory, this might require running:
 
 # ERRATA:
 
-Note that this only translates the 'comments' inside patches, i.e., 'text X Y' objects. This means that some patch cords might break afterwards depending on the case. Also, some realignment might be needed afterwards, so you need to check every patch just in case. Use at your own risk.
+Note that this only translates the 'comments' inside patches, i.e., 'text X Y' objects. This means that:
+
+* Some patch cords might break afterwards depending on the case.
+* Some realignment might be needed afterwards.
+* The translation character set is bound to pd's comments character set.
+
+In other words: **use at your own risk**, and check every patch just in case. 
 
 # PDDIR:
 
