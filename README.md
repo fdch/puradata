@@ -12,7 +12,7 @@ This is a set of helper scripts to translate Pd's internal documentation (docs) 
 
 Run 
 
-  $ ./template
+`  $ ./template
 
 Specifying all the following arguments:
 
@@ -24,7 +24,7 @@ Specifying all the following arguments:
 
 For example:
 
-  $ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
+`  $ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
 
 (***) There is a list of all found File-Directories inside pd/docs
 
@@ -38,7 +38,7 @@ This is where Google Toolkit (or OmegaT, or whatever) and expertise comes in han
 
 Run 
 
-  $ ./translate "5.reference"
+`  $ ./translate "5.reference"
 
 This will insert your translation into the current version of pd.
 
