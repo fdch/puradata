@@ -1,6 +1,6 @@
-# Puradata
+# README
 
-This is a set of helper scripts to translate Pd's internal documentation (docs, extra) into other languages.
+This is a set of helper scripts to translate Pd's internal documentation (docs, extra) into other languages. The code is located [here](https://github.com/fdch/puradata)
 
 # Steps
 
