@@ -24,7 +24,7 @@ Specifying all the following arguments:
 
 For example:
 
-`  $ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
+$ ./template 5.reference \"Fede Camara Halac\" camarafede@gmail.com Spanish es
 
 (***) There is a list of all found File-Directories inside pd/docs
 
