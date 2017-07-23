@@ -1,5 +1,6 @@
 #!/bin/bash
-DOCDIR="/Aplications/Pd-0.48.0/Contents/Resources"
+PDDIR="/Aplications/Pd-0.48.0/Contents/Resources"
+DOCDIR="$PDDIR/doc"
 FILEDIR="$1"
 CURDIR="$(pwd)"
 ID=$(grep msgid "$FILEDIR-trim.po" | sed "s/^msgid \"//" | sed "s/.$//")
